@@ -7,70 +7,216 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen overflow-hidden bg-[#050505] text-white"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#38BDF8]/10 blur-[160px]" />
+      {/* =====================================================
+          BACKGROUND GLOW
+      ====================================================== */}
 
-      <div className="pointer-events-none absolute bottom-[-15%] right-[-10%] h-[500px] w-[500px] rounded-full bg-[#38BDF8]/[0.07] blur-[160px]" />
+      {/* Left subtle glow */}
+      <div className="pointer-events-none absolute left-[-15%] top-[20%] h-[450px] w-[450px] rounded-full bg-[#38BDF8]/[0.06] blur-[150px]" />
 
-      {/* Decorative Blue Lines */}
-      <div className="pointer-events-none absolute left-[-5%] top-[35%] h-[2px] w-[45%] rotate-[-15deg] bg-[#38BDF8]/70 shadow-[0_0_15px_rgba(56,189,248,0.6)]" />
+      {/* Bottom right glow */}
+      <div className="pointer-events-none absolute bottom-[-15%] right-[-10%] h-[550px] w-[550px] rounded-full bg-[#38BDF8]/[0.07] blur-[160px]" />
 
-      <div className="pointer-events-none absolute left-[42%] top-[8%] h-[2px] w-[28%] rotate-[52deg] bg-[#38BDF8]/70 shadow-[0_0_15px_rgba(56,189,248,0.6)]" />
+      {/* Small center glow */}
+      <div className="pointer-events-none absolute left-[40%] top-[35%] h-[250px] w-[250px] rounded-full bg-[#38BDF8]/[0.025] blur-[120px]" />
 
-      <div className="pointer-events-none absolute right-[-3%] top-[27%] h-[2px] w-[40%] rotate-[-35deg] bg-[#38BDF8]/60 shadow-[0_0_15px_rgba(56,189,248,0.6)]" />
+      {/* =====================================================
+          DOT MATRIX WAVE — TOP RIGHT
+      ====================================================== */}
 
-      <div className="pointer-events-none absolute bottom-[15%] left-[30%] h-[2px] w-[40%] rotate-[-25deg] bg-[#38BDF8]/60 shadow-[0_0_15px_rgba(56,189,248,0.6)]" />
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+        className="pointer-events-none absolute right-[-8%] top-[8%] z-0 h-[280px] w-[650px] opacity-70 md:h-[330px]"
+      >
+        <svg
+          viewBox="0 0 700 330"
+          className="h-full w-full"
+          preserveAspectRatio="none"
+        >
+          {/* Main wave */}
+          <path
+            d="M0 165 C120 80 200 80 320 150 S500 240 700 90"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.8"
+          />
 
-      {/* Main Container */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] items-center px-6 pb-12 pt-28 md:px-8 lg:px-6">
+          {/* Wave 2 */}
+          <path
+            d="M0 185 C120 100 210 100 330 165 S510 255 700 105"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.55"
+          />
 
+          {/* Wave 3 */}
+          <path
+            d="M0 205 C120 120 220 120 340 180 S520 275 700 125"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.35"
+          />
+
+          {/* Wave 4 */}
+          <path
+            d="M0 225 C120 140 230 140 350 195 S530 295 700 145"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.2"
+          />
+        </svg>
+      </motion.div>
+
+      {/* =====================================================
+          DOT MATRIX WAVE — BOTTOM RIGHT
+      ====================================================== */}
+
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.6, delay: 0.2, ease: "easeOut" }}
+        className="pointer-events-none absolute bottom-[-5%] right-[-10%] z-0 h-[300px] w-[720px] opacity-75 md:h-[360px]"
+      >
+        <svg
+          viewBox="0 0 720 360"
+          className="h-full w-full"
+          preserveAspectRatio="none"
+        >
+          {/* Main bottom wave */}
+          <path
+            d="M0 270 C130 180 210 180 330 250 S530 350 720 170"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.75"
+          />
+
+          {/* Wave 2 */}
+          <path
+            d="M0 290 C130 200 220 200 340 265 S540 360 720 190"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.5"
+          />
+
+          {/* Wave 3 */}
+          <path
+            d="M0 310 C130 220 230 220 350 280 S550 370 720 210"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.3"
+          />
+
+          {/* Wave 4 */}
+          <path
+            d="M0 330 C130 240 240 240 360 295 S560 380 720 230"
+            fill="none"
+            stroke="#38BDF8"
+            strokeWidth="2"
+            strokeDasharray="1 9"
+            strokeLinecap="round"
+            opacity="0.18"
+          />
+        </svg>
+      </motion.div>
+
+      {/* =====================================================
+          SMALL FLOATING DOT FIELD
+      ====================================================== */}
+
+      <div
+        className="pointer-events-none absolute right-[8%] top-[45%] z-0 hidden h-[120px] w-[180px] opacity-30 md:block"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(56,189,248,0.7) 1px, transparent 1px)",
+          backgroundSize: "14px 14px",
+          maskImage:
+            "linear-gradient(to left, black, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to left, black, transparent)",
+        }}
+      />
+
+      {/* =====================================================
+          MAIN CONTAINER
+      ====================================================== */}
+
+      <div className="relative z-20 mx-auto flex min-h-screen max-w-[1400px] items-center px-6 pb-12 pt-28 md:px-8 lg:px-6">
         <div className="grid w-full items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
 
-          {/* LEFT SIDE */}
-          <div>
+          {/* =================================================
+              LEFT SIDE
+          ================================================== */}
+
+          <div className="relative z-20">
 
             {/* Arabic Greeting */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="mb-5 text-left text-3xl text-[#38BDF8] md:text-4xl"
+              className="relative z-20 mb-5 text-left text-3xl text-[#38BDF8] md:text-4xl"
             >
               السَّلَامُ عَلَيْكُمْ
             </motion.p>
 
-            {/* Quran Verse + Meaning */}
+            {/* =================================================
+                QURAN VERSE
+            ================================================== */}
+
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-left"
+              className="relative z-20 text-left"
             >
-              {/* Quran Verse */}
               <h1
                 dir="rtl"
-                className="text-left text-4xl font-semibold leading-relaxed md:text-6xl lg:text-7xl"
+                className="relative z-20 text-left text-4xl font-semibold leading-relaxed md:text-6xl lg:text-7xl"
               >
                 وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ
               </h1>
 
-              {/* English Meaning */}
-              <p className="mt-4 text-left text-lg italic text-gray-300 md:text-2xl">
+              <p className="relative z-20 mt-4 text-left text-lg italic text-gray-300 md:text-2xl">
                 “My success is only by Allah.”
               </p>
 
-              {/* Reference */}
-              <p className="mt-2 text-left text-sm text-gray-500">
+              <p className="relative z-20 mt-2 text-left text-sm text-gray-500">
                 Qur'an 11:88
               </p>
             </motion.div>
 
-            {/* Main Intro */}
+            {/* =================================================
+                MAIN INTRO
+            ================================================== */}
+
             <motion.h2
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-12 text-left text-3xl font-semibold leading-tight md:text-4xl"
+              className="relative z-20 mt-12 text-left text-3xl font-semibold leading-tight md:text-4xl"
             >
               Aspiring Entrepreneur{" "}
               <span className="text-[#38BDF8]">&</span> Tech Creator
@@ -81,25 +227,27 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="mt-5 max-w-2xl text-left text-base leading-8 text-gray-300 md:text-lg"
+              className="relative z-20 mt-5 max-w-2xl text-left text-base leading-8 text-gray-300 md:text-lg"
             >
               I’m a commerce student exploring technology, creativity,
               business and digital experiences — building skills today for the
               opportunities of tomorrow.
             </motion.p>
 
-            {/* Buttons */}
+            {/* =================================================
+                BUTTONS
+            ================================================== */}
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="mt-9 flex flex-wrap gap-4"
+              className="relative z-20 mt-9 flex flex-wrap gap-4"
             >
-
               {/* VIEW MY WORK */}
               <Link
                 to="/projects"
-                className="group inline-flex items-center gap-2 rounded-lg bg-[#38BDF8] px-7 py-4 text-sm font-medium text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.4)]"
+                className="group inline-flex items-center gap-2 rounded-lg bg-[#38BDF8] px-7 py-4 text-sm font-medium text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.45)]"
               >
                 View My Work
 
@@ -118,12 +266,15 @@ const Hero = () => {
               </a>
             </motion.div>
 
-            {/* Social Links */}
+            {/* =================================================
+                SOCIAL LINKS
+            ================================================== */}
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="mt-12 flex gap-8 text-sm text-gray-300"
+              className="relative z-20 mt-12 flex gap-8 text-sm text-gray-300"
             >
               <a
                 href="#"
@@ -148,24 +299,31 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* RIGHT QUOTE CARD */}
+          {/* =================================================
+              RIGHT QUOTE CARD
+          ================================================== */}
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.4 }}
-            className="hidden lg:block"
+            className="relative z-20 hidden lg:block"
           >
-            <div className="relative mx-auto max-w-xl rounded-2xl border border-[#38BDF8]/70 bg-[#080d10]/90 p-10 shadow-[0_0_45px_rgba(56,189,248,0.15)]">
+            <div className="relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-[#38BDF8]/70 bg-[#080d10]/95 p-10 shadow-[0_0_45px_rgba(56,189,248,0.15)]">
+
+              {/* Card Glow */}
+              <div className="pointer-events-none absolute right-[-80px] top-[-80px] h-48 w-48 rounded-full bg-[#38BDF8]/10 blur-3xl" />
 
               {/* Top Line */}
-              <div className="mb-16 h-1 w-24 rounded-full bg-[#38BDF8] shadow-[0_0_15px_rgba(56,189,248,0.7)]" />
+              <div className="relative z-10 mb-16 h-1 w-24 rounded-full bg-[#38BDF8] shadow-[0_0_15px_rgba(56,189,248,0.7)]" />
 
-              {/* Quote */}
-              <div className="text-5xl text-[#38BDF8]">
+              {/* Quote Symbol */}
+              <div className="relative z-10 text-5xl text-[#38BDF8]">
                 “
               </div>
 
-              <h3 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+              {/* Quote Text */}
+              <h3 className="relative z-10 mt-4 text-4xl font-semibold leading-tight md:text-5xl">
                 Building today,
                 <br />
                 shaping a better
@@ -174,10 +332,10 @@ const Hero = () => {
               </h3>
 
               {/* Divider */}
-              <div className="mt-14 h-px w-16 bg-[#38BDF8]" />
+              <div className="relative z-10 mt-14 h-px w-16 bg-[#38BDF8]" />
 
               {/* Card Footer */}
-              <div className="mt-8 flex items-center justify-between text-sm text-gray-500">
+              <div className="relative z-10 mt-8 flex items-center justify-between text-sm text-gray-500">
                 <span>Portfolio 2026</span>
 
                 <span className="text-2xl text-[#38BDF8]">
@@ -186,23 +344,25 @@ const Hero = () => {
               </div>
             </div>
           </motion.div>
-
         </div>
 
-        {/* Scroll Down */}
+        {/* =====================================================
+            SCROLL DOWN
+        ====================================================== */}
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 items-center gap-4 text-xs tracking-[0.4em] text-gray-400 md:flex"
+          className="absolute bottom-5 left-1/2 z-20 hidden -translate-x-1/2 items-center gap-4 text-xs tracking-[0.4em] text-gray-400 md:flex"
         >
           <span className="h-px w-12 bg-[#38BDF8]" />
 
           SCROLL DOWN
 
           <span className="h-px w-12 bg-[#38BDF8]" />
-        </motion.div>
 
+        </motion.div>
       </div>
     </section>
   );
