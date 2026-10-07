@@ -7,363 +7,217 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen overflow-hidden bg-[#050505] text-white"
     >
-      {/* =====================================================
-          BACKGROUND GLOW
-      ====================================================== */}
+      {/* ================= BACKGROUND GLOW ================= */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#38BDF8]/10 blur-[140px]" />
 
-      {/* Left subtle glow */}
-      <div className="pointer-events-none absolute left-[-15%] top-[20%] h-[450px] w-[450px] rounded-full bg-[#38BDF8]/[0.06] blur-[150px]" />
+        <div className="absolute right-[-100px] top-[15%] h-[400px] w-[400px] rounded-full bg-[#38BDF8]/5 blur-[120px]" />
+      </div>
 
-      {/* Bottom right glow */}
-      <div className="pointer-events-none absolute bottom-[-15%] right-[-10%] h-[550px] w-[550px] rounded-full bg-[#38BDF8]/[0.07] blur-[160px]" />
-
-      {/* Small center glow */}
-      <div className="pointer-events-none absolute left-[40%] top-[35%] h-[250px] w-[250px] rounded-full bg-[#38BDF8]/[0.025] blur-[120px]" />
-
-      {/* =====================================================
-          DOT MATRIX WAVE — TOP RIGHT
-      ====================================================== */}
-
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.4, ease: "easeOut" }}
-        className="pointer-events-none absolute right-[-8%] top-[8%] z-0 h-[280px] w-[650px] opacity-70 md:h-[330px]"
-      >
-        <svg
-          viewBox="0 0 700 330"
-          className="h-full w-full"
-          preserveAspectRatio="none"
-        >
-          {/* Main wave */}
-          <path
-            d="M0 165 C120 80 200 80 320 150 S500 240 700 90"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.8"
+      {/* ================= DOT MATRIX WAVE ================= */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-50">
+        <div className="absolute right-[-10%] top-[5%] h-[700px] w-[700px]">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, rgba(56,189,248,0.45) 1px, transparent 1px)",
+              backgroundSize: "18px 18px",
+              maskImage:
+                "radial-gradient(ellipse at center, black 20%, transparent 72%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse at center, black 20%, transparent 72%)",
+            }}
           />
+        </div>
+      </div>
 
-          {/* Wave 2 */}
-          <path
-            d="M0 185 C120 100 210 100 330 165 S510 255 700 105"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.55"
-          />
+      {/* ================= MAIN CONTENT ================= */}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-24 lg:px-10">
+        <div className="grid w-full items-center gap-16 lg:grid-cols-2">
 
-          {/* Wave 3 */}
-          <path
-            d="M0 205 C120 120 220 120 340 180 S520 275 700 125"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.35"
-          />
+          {/* ================= LEFT CONTENT ================= */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl"
+          >
 
-          {/* Wave 4 */}
-          <path
-            d="M0 225 C120 140 230 140 350 195 S530 295 700 145"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.2"
-          />
-        </svg>
-      </motion.div>
-
-      {/* =====================================================
-          DOT MATRIX WAVE — BOTTOM RIGHT
-      ====================================================== */}
-
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.6, delay: 0.2, ease: "easeOut" }}
-        className="pointer-events-none absolute bottom-[-5%] right-[-10%] z-0 h-[300px] w-[720px] opacity-75 md:h-[360px]"
-      >
-        <svg
-          viewBox="0 0 720 360"
-          className="h-full w-full"
-          preserveAspectRatio="none"
-        >
-          {/* Main bottom wave */}
-          <path
-            d="M0 270 C130 180 210 180 330 250 S530 350 720 170"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.75"
-          />
-
-          {/* Wave 2 */}
-          <path
-            d="M0 290 C130 200 220 200 340 265 S540 360 720 190"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.5"
-          />
-
-          {/* Wave 3 */}
-          <path
-            d="M0 310 C130 220 230 220 350 280 S550 370 720 210"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.3"
-          />
-
-          {/* Wave 4 */}
-          <path
-            d="M0 330 C130 240 240 240 360 295 S560 380 720 230"
-            fill="none"
-            stroke="#38BDF8"
-            strokeWidth="2"
-            strokeDasharray="1 9"
-            strokeLinecap="round"
-            opacity="0.18"
-          />
-        </svg>
-      </motion.div>
-
-      {/* =====================================================
-          SMALL FLOATING DOT FIELD
-      ====================================================== */}
-
-      <div
-        className="pointer-events-none absolute right-[8%] top-[45%] z-0 hidden h-[120px] w-[180px] opacity-30 md:block"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(56,189,248,0.7) 1px, transparent 1px)",
-          backgroundSize: "14px 14px",
-          maskImage:
-            "linear-gradient(to left, black, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(to left, black, transparent)",
-        }}
-      />
-
-      {/* =====================================================
-          MAIN CONTAINER
-      ====================================================== */}
-
-      <div className="relative z-20 mx-auto flex min-h-screen max-w-[1400px] items-center px-6 pb-12 pt-28 md:px-8 lg:px-6">
-        <div className="grid w-full items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
-
-          {/* =================================================
-              LEFT SIDE
-          ================================================== */}
-
-          <div className="relative z-20">
-
-            {/* Arabic Greeting */}
+            {/* ================= SALAM ================= */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="relative z-20 mb-5 text-left text-3xl text-[#38BDF8] md:text-4xl"
+              dir="rtl"
+              className="mb-2 text-left text-base font-medium tracking-wide text-white/80 sm:text-lg"
             >
-              السَّلَامُ عَلَيْكُمْ
+              اَلسَّلَامُ عَلَيْكُمْ
             </motion.p>
 
-            {/* =================================================
-                QURAN VERSE
-            ================================================== */}
+            {/* ================= SMALL LABEL ================= */}
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#38BDF8]/30 bg-[#38BDF8]/5 px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-[#38BDF8] shadow-[0_0_12px_#38BDF8]" />
 
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="relative z-20 text-left"
-            >
-              <h1
+              <span className="text-xs uppercase tracking-[0.25em] text-[#38BDF8]">
+                AI • CREATIVITY • FUTURE
+              </span>
+            </div>
+
+            {/* ================= MAIN HEADING ================= */}
+            <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              Aspiring
+              <br />
+
+              <span className="text-white">
+                Entrepreneur
+              </span>
+
+              <br />
+
+              <span className="text-[#38BDF8]">
+                & Tech Creator
+              </span>
+            </h1>
+
+            {/* ================= DESCRIPTION ================= */}
+            <p className="mt-7 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
+              A commerce background girl building her own era with AI.
+              Learning, creating and exploring how artificial intelligence
+              can turn hours of work into minutes.
+            </p>
+
+            {/* ================= QURAN VERSE ================= */}
+            <div className="mt-8 border-l-2 border-[#38BDF8]/50 pl-5">
+              <p
                 dir="rtl"
-                className="relative z-20 text-left text-4xl font-semibold leading-relaxed md:text-6xl lg:text-7xl"
+                className="text-xl leading-9 text-white/90 sm:text-2xl"
               >
                 وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ
-              </h1>
+              </p>
 
-              <p className="relative z-20 mt-4 text-left text-lg italic text-gray-300 md:text-2xl">
+              <p className="mt-1 text-sm text-white/40">
                 “My success is only by Allah.”
               </p>
 
-              <p className="relative z-20 mt-2 text-left text-sm text-gray-500">
-                Qur'an 11:88
+              <p className="mt-1 text-xs text-[#38BDF8]/70">
+                Qur’an 11:88
               </p>
-            </motion.div>
+            </div>
 
-            {/* =================================================
-                MAIN INTRO
-            ================================================== */}
-
-            <motion.h2
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="relative z-20 mt-12 text-left text-3xl font-semibold leading-tight md:text-4xl"
-            >
-              Aspiring Entrepreneur{" "}
-              <span className="text-[#38BDF8]">&</span> Tech Creator
-            </motion.h2>
-
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-              className="relative z-20 mt-5 max-w-2xl text-left text-base leading-8 text-gray-300 md:text-lg"
-            >
-              I’m a commerce student exploring technology, creativity,
-              business and digital experiences — building skills today for the
-              opportunities of tomorrow.
-            </motion.p>
-
-            {/* =================================================
-                BUTTONS
-            ================================================== */}
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-              className="relative z-20 mt-9 flex flex-wrap gap-4"
-            >
-              {/* VIEW MY WORK */}
+            {/* ================= BUTTONS ================= */}
+            <div className="mt-9 flex flex-wrap gap-4">
               <Link
                 to="/projects"
-                className="group inline-flex items-center gap-2 rounded-lg bg-[#38BDF8] px-7 py-4 text-sm font-medium text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(56,189,248,0.45)]"
+                className="rounded-lg bg-[#38BDF8] px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:bg-[#7dd3fc] hover:shadow-[0_0_30px_rgba(56,189,248,0.35)]"
               >
                 View My Work
-
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
               </Link>
 
-              {/* DOWNLOAD CV */}
               <a
                 href="/Shagufta-Saba-CV.pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-lg border border-[#38BDF8]/60 px-7 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-[#38BDF8] hover:text-black"
+                className="rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-[#38BDF8]/50 hover:bg-[#38BDF8]/10"
               >
                 Download CV
               </a>
-            </motion.div>
+            </div>
 
-            {/* =================================================
-                SOCIAL LINKS
-            ================================================== */}
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="relative z-20 mt-12 flex gap-8 text-sm text-gray-300"
-            >
+            {/* ================= SOCIAL LINKS ================= */}
+            <div className="mt-8 flex items-center gap-5 text-sm text-white/40">
               <a
-                href="#"
-                className="transition-colors duration-300 hover:text-[#38BDF8]"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="#"
-                className="transition-colors duration-300 hover:text-[#38BDF8]"
+                href="https://github.com/shaguftasaba"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#38BDF8]"
               >
                 GitHub
               </a>
 
+              <span className="h-1 w-1 rounded-full bg-white/20" />
+
               <a
-                href="#"
-                className="transition-colors duration-300 hover:text-[#38BDF8]"
+                href="#contact"
+                className="transition-colors hover:text-[#38BDF8]"
               >
-                Instagram
+                Contact
               </a>
-            </motion.div>
-          </div>
 
-          {/* =================================================
-              RIGHT QUOTE CARD
-          ================================================== */}
+              <span className="h-1 w-1 rounded-full bg-white/20" />
 
+              <span>Ranchi, India</span>
+            </div>
+          </motion.div>
+
+          {/* ================= RIGHT PHOTO ================= */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.4 }}
-            className="relative z-20 hidden lg:block"
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative flex items-center justify-center lg:translate-x-16 xl:translate-x-24"
           >
-            <div className="relative mx-auto max-w-xl overflow-hidden rounded-2xl border border-[#38BDF8]/70 bg-[#080d10]/95 p-10 shadow-[0_0_45px_rgba(56,189,248,0.15)]">
 
-              {/* Card Glow */}
-              <div className="pointer-events-none absolute right-[-80px] top-[-80px] h-48 w-48 rounded-full bg-[#38BDF8]/10 blur-3xl" />
+            {/* Outer Glow */}
+            <div className="absolute h-[630px] w-[630px] rounded-full bg-[#38BDF8]/10 blur-3xl" />
 
-              {/* Top Line */}
-              <div className="relative z-10 mb-16 h-1 w-24 rounded-full bg-[#38BDF8] shadow-[0_0_15px_rgba(56,189,248,0.7)]" />
+            {/* Main Circle */}
+            <div className="group relative h-[600px] w-[600px] max-w-[85vw] max-h-[85vw] overflow-hidden rounded-full border border-[#38BDF8]/50 bg-[#071016] shadow-[0_0_80px_rgba(56,189,248,0.18)]">
 
-              {/* Quote Symbol */}
-              <div className="relative z-10 text-5xl text-[#38BDF8]">
-                “
-              </div>
+              {/* Image */}
+              <img
+                src="/shagufta-new.jpg"
+                alt="Shagufta Saba"
+                className="h-full w-full object-cover object-[50%_30%] transition-transform duration-700 group-hover:scale-[1.02]"
+              />
 
-              {/* Quote Text */}
-              <h3 className="relative z-10 mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-                Building today,
-                <br />
-                shaping a better
-                <br />
-                tomorrow.
-              </h3>
+              {/* Dark Gradient */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
 
-              {/* Divider */}
-              <div className="relative z-10 mt-14 h-px w-16 bg-[#38BDF8]" />
+              {/* Inner Circle Ring */}
+              <div className="pointer-events-none absolute inset-4 rounded-full border border-[#38BDF8]/20" />
 
-              {/* Card Footer */}
-              <div className="relative z-10 mt-8 flex items-center justify-between text-sm text-gray-500">
-                <span>Portfolio 2026</span>
+              {/* Top Cyan Accent */}
+              <div className="absolute left-1/2 top-7 h-1 w-20 -translate-x-1/2 rounded-full bg-[#38BDF8] shadow-[0_0_18px_#38BDF8]" />
 
-                <span className="text-2xl text-[#38BDF8]">
-                  ✦
+              {/* Name Label */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                <span className="rounded-full border border-white/15 bg-black/50 px-5 py-2 text-xs font-medium tracking-[0.25em] text-white/80 backdrop-blur-md">
+                  SHAGUFTA SABA
                 </span>
               </div>
             </div>
+
+            {/* Floating Cyan Dot */}
+            <motion.div
+              animate={{
+                y: [0, -12, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute right-[3%] top-[15%] h-4 w-4 rounded-full bg-[#38BDF8] shadow-[0_0_25px_#38BDF8]"
+            />
+
+            {/* Floating Small Circle */}
+            <motion.div
+              animate={{
+                y: [0, 10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute bottom-[18%] left-[2%] h-3 w-3 rounded-full border border-[#38BDF8] shadow-[0_0_15px_#38BDF8]"
+            />
           </motion.div>
         </div>
-
-        {/* =====================================================
-            SCROLL DOWN
-        ====================================================== */}
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-5 left-1/2 z-20 hidden -translate-x-1/2 items-center gap-4 text-xs tracking-[0.4em] text-gray-400 md:flex"
-        >
-          <span className="h-px w-12 bg-[#38BDF8]" />
-
-          SCROLL DOWN
-
-          <span className="h-px w-12 bg-[#38BDF8]" />
-
-        </motion.div>
       </div>
+
+      {/* ================= BOTTOM FADE ================= */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent" />
     </section>
   );
 };
